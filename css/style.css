@@ -33,9 +33,9 @@
 
 @media (max-width: 575px) {
     .header-cover {
-      height: 20hv;
+      height: 30vh;
     }
-    .header-container img {
+    /* .header-container img {
       height: 100%;
-    }
+    } */
   }
