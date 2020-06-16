@@ -1,0 +1,6 @@
+INSERT INTO `menus` (`id`, `name`, `type`, `cuisine`, `price`, `description`) VALUES 
+(1, 'Padthai', 'Food', 'Thai', 10.25, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta augue et ante convallis commodo. Vestibulum vulputate elit sit amet est sollicitudin aliquet.'), 
+(2, 'Misto di Mare', 'Food', 'Italian', 26.95, 'Etiam id rhoncus ligula. Mauris vulputate feugiat dui sit amet dictum. In et porttitor erat. Ut ut ante at ante sodales ultricies in et lectus. Nam erat velit, egestas commodo pretium in, accumsan nec enim.'), 
+(3, 'Carne Asada Taco', 'Food', 'Mexican', 8.59, 'Praesent varius tincidunt interdum. Vestibulum facilisis, massa ac dignissim feugiat, quam lacus lobortis nibh, eget fringilla sapien nunc ut turpis. Nulla pretium eget nulla a fermentum.'), 
+(4, 'Bimbimbop Bulgogi', 'Food', 'Korean', 14.99, 'Nam nec vestibulum est. Nullam pellentesque dui a vestibulum interdum. Donec aliquam accumsan eros id pharetra. Maecenas faucibus congue posuere. Mauris bibendum enim id magna viverra, ac tempus nisl maximus.'), 
+(5, 'Daifuku', 'Dessert', 'Japanese', 5.99, 'Praesent nulla lectus, consequat non hendrerit ac, aliquet in leo. Donec malesuada et massa at volutpat. Nulla vulputate mollis sem. Praesent porta consectetur volutpat.');
