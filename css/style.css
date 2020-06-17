@@ -1,7 +1,6 @@
 .header-cover {
     width: 100%;
     height: 40vh;
-    /* background: url("../img/cover.svg") top center; */
     background-size: cover;
     position: relative;
     -webkit-background-size: cover;
@@ -35,7 +34,4 @@
     .header-cover {
       height: 30vh;
     }
-    /* .header-container img {
-      height: 100%;
-    } */
-  }
+}

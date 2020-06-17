@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Style -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <title>Cook Menu - Site</title>
 </head>
+
 <body>
     <div class="container" ng-app="myApp" ng-controller="myCtrl">
-        <div ng-controller="myCtrl">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand mb-0 h1" href="#">COOK MENU</a>
-                <span class="navbar-text ml-auto" ng-repeat="x in users">Welcome, {{ x.fname }} {{ x.lname }}</span>
-            </nav>
-            <div class="header-cover">
-                <div class="header-container">
-                    <img src="./img/cover2.svg" alt="">
-                </div>
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mb-0 h1" href="#">COOK MENU</a>
+            <span class="navbar-text ml-auto" ng-repeat="x in users">Welcome, {{ x.fname }} {{ x.lname }}</span>
+        </nav>
+        <div class="header-cover">
+            <div class="header-container">
+                <img src="./img/cover.jpg" alt="">
             </div>
         </div>
+        <!-- End Navbar -->
+
         <br />
+
+        <!-- Start Nav Tabs -->
         <nav>
             <div id="myTab" class="nav nav-tabs" id="nav-tab" role="tablist">
                 <!-- <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a> -->
@@ -32,9 +40,12 @@
                 <a class="cc nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-account" role="tab" aria-controls="nav-account" aria-selected="false">My Account</a>
             </div>
         </nav>
+        <!-- End Nav Tabs -->
+        
+        <!-- Start Nav Menu -->
         <div class="tab-content" id="nav-tabContent">
             <!-- <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div> -->
-            <div class="tab-pane fade show active" id="nav-menu" role="tabpanel" aria-labelledby="nav-menu-tab" ng-controller="myCtrl">
+            <div class="tab-pane fade show active" id="nav-menu" role="tabpanel" aria-labelledby="nav-menu-tab">
                 <br />
                 <button class="btn btn-outline-dark" onclick="newMenu()">Create New Menu</button>
                 <br /><br />
@@ -106,7 +117,6 @@
                         <div class="row">
                             <div class="col">
                                 <h5 style="display: inline-block;">{{ x.name }}</h5> 
-                                <!-- <button style="display: inline-block; margin-left: 20px;" class="btn btn-sm btn-outline-dark">Edit</button> -->
                                 <button style="display: inline-block; margin-left: 20px;" class="btn btn-sm btn-dark" ng-click="deleteMenu(x.id)">Delete</button>
                             </div>
                         </div>
@@ -118,9 +128,12 @@
                     <hr>
                 </span>
             </div>
+            <!-- End Nav Menu -->
+
+            <!-- Start Nav User -->
             <div class="tab-pane fade" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab">
                 <br />
-                <div id="user-info" ng-controller="myCtrl">
+                <div id="user-info">
                     <h5>Account Information</h5>
                     <span ng-repeat="x in users">
                         <p>First Name: {{ x.fname }}</p>
@@ -130,47 +143,48 @@
                     </span>
                     <button class="btn btn-outline-dark" onClick="editUser()">Edit</button>
                 </div>
-                <div id="edit-user" style="display: none;" ng-controller="myCtrl">
+                <div id="edit-user" style="display: none;">
                     <h5>Account Information</h5>
                     <form name="userForm">
-                            <div class="form-group">
-                                <label for="">First Name</label>
-                                <input class="form-control" type="text" ng-value="user.fname" ng-model="user.fname">
-                                <div id="field_fname" style="display: none;">
-                                    <span style="color: red"><small>Please fill out this field!</small></span>
-                                </div>
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input class="form-control" type="text" ng-value="user.fname" ng-model="user.fname">
+                            <div id="field_fname" style="display: none;">
+                                <span style="color: red"><small>Please fill out this field!</small></span>
                             </div>
-                            <div class="form-group">
-                                <label for="">Last Name</label>
-                                <input class="form-control" type="text" ng-value="user.lname" ng-model="user.lname">
-                                <div id="field_lname" style="display: none;">
-                                    <span style="color: red"><small>Please fill out this field!</small></span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input class="form-control" type="text" ng-value="user.lname" ng-model="user.lname">
+                            <div id="field_lname" style="display: none;">
+                                <span style="color: red"><small>Please fill out this field!</small></span>
                             </div>
-                            <div class="form-group">
-                                <label for="">Address</label>
-                                <input class="form-control" type="text" ng-value="user.address" ng-model="user.address">
-                                <div id="field_address" style="display: none;">
-                                    <span style="color: red"><small>Please fill out this field!</small></span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Address</label>
+                            <input class="form-control" type="text" ng-value="user.address" ng-model="user.address">
+                            <div id="field_address" style="display: none;">
+                                <span style="color: red"><small>Please fill out this field!</small></span>
                             </div>
-                            <div class="form-group">
-                                <label for="">Phone Number</label>
-                                <input class="form-control" type="text" ng-value="user.phone" ng-model="user.phone">
-                                <div id="field_phone" style="display: none;">
-                                    <span style="color: red"><small>Please fill out this field!</small></span>
-                                </div>
-                            </div>                           
-                            <button type="submit" class="btn btn-dark" ng-click="submitUser()">Save</button>
-                            <button class="btn btn-outline-dark" onclick="cancelEdit()">cancel</button>
-                        <!-- </span> -->
-                    </form>
-                    
+                        </div>
+                        <div class="form-group">
+                            <label for="">Phone Number</label>
+                            <input class="form-control" type="text" ng-value="user.phone" ng-model="user.phone">
+                            <div id="field_phone" style="display: none;">
+                                <span style="color: red"><small>Please fill out this field!</small></span>
+                            </div>
+                        </div>                           
+                        <button type="submit" class="btn btn-dark" ng-click="submitUser()">Save</button>
+                        <button class="btn btn-outline-dark" onclick="cancelEdit()">cancel</button>
+                    </form>                   
                 </div>
             </div>
+            <!-- End Nav User -->
+
         </div>
     </div>
 
     <script src="./js/index.js"></script>
 </body>
+
 </html>
